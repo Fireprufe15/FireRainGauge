@@ -58,9 +58,9 @@ void sendBTHomeReport() {
   serviceData += (char)0xFC; 
   serviceData += (char)0x40; 
 
-  // 1. Rain Count (Type 0x09 - 2 bytes)
+  // 1. Rain Count (Type 0x3D - 2 bytes unsigned int)
   int tips = (int)(rtcData.sessionRainMM / MM_PER_TIP);
-  serviceData += (char)0x09; 
+  serviceData += (char)0x3D; 
   serviceData += (char)(tips & 0xFF);
   serviceData += (char)((tips >> 8) & 0xFF);
 
